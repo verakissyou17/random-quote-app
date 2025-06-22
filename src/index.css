@@ -6,7 +6,7 @@
   --transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s;
   --font-size: clamp(1.2rem, 1vw + 1.2rem, 2.2rem);
   --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  --author-font: 'Savate', serif;
+  --author-font: "Savate", serif;
 }
 
 *,
@@ -55,7 +55,8 @@ body {
   gap: 0.7em;
 }
 
-.quote-box .quote-text i, .quote-box .quote-text svg {
+.quote-box .quote-text i,
+.quote-box .quote-text svg {
   font-size: 2.3rem;
   margin-right: 0.5em;
   color: #16a085;
