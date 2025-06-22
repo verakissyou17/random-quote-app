@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const [quote, setQuote] = useState(
@@ -27,6 +26,10 @@ function App() {
     setAuthor(jsonQuoteData.quotes[ri].author);
   };
 
+  const pageUrl = encodeURIComponent(window.location.href);
+  const shareText = encodeURIComponent(`"${quote}" - ${author}`);
+  const whatsappShareUrl = `https://wa.me/?text=${shareText}%20${pageUrl}`;
+
   return (
     <>
       <div className="wrapper">
@@ -41,21 +44,12 @@ function App() {
           <div className="buttons">
             <a
               className="button"
-              href="https://www.facebook.com/"
+              href={whatsappShareUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="Share on Facebook"
+              aria-label="Share on WhatsApp"
             >
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a
-              className="button"
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Share on LinkedIn"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
+              <FontAwesomeIcon icon={faWhatsapp} />
             </a>
             <button
               className="new-quote button"
